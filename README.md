@@ -1,4 +1,5 @@
 tumblr-default
 ==============
 
-The example text from tumblr theme documentation, for connivence.
+A tumblr theme built with Bootsrap 3
+
