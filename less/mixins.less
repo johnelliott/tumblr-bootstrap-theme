@@ -1,0 +1,36 @@
+// Relate theme.html elements to bootstrap classes
+
+// tell content to look like bs3 container
+.wrapper { 
+	.container;
+}
+
+// add lozenges to links in specific areas of the site
+.posts { 
+	
+	// increase after-paragraph spacing
+	.post-paragraphs;
+
+	.post-text p, .caption, .source {
+		.lozenges;
+	}
+	
+	// remove bullets from main posts list
+	ul {
+		.tumblr-posts-list;
+		}
+
+		// make images in image posts responsive    
+		.post-photo img {
+			.img-responsive;
+		}
+}
+
+// add alert style to search results
+.search-results {
+	 .alert;
+	 .alert-info;
+	 a {
+	 .alert-link;
+	 }
+}

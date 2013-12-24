@@ -1,0 +1,30 @@
+// Code for specific non-framework features
+
+// add lozenges before links
+.lozenges {
+    a:before {
+        content: "\25CA\2005";
+        color: blue;
+        font-weight: normal;
+        font-weight: bold;
+    }
+}
+
+// remove bullets from list
+.tumblr-posts-list {
+	list-style: none;
+	-webkit-padding-start: 0;
+	}
+	
+// increase after-paragraph margin
+// this one is questionable: should I just copy the bootstrap/type.less file and modify that
+.post-paragraphs {
+	p {
+		margin: 0 0 (@line-height-computed * 1.1);
+	}
+}
+
+// set container size
+//.theme-container {
+//	max-width: 730px;
+//}
