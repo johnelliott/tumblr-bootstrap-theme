@@ -6243,6 +6243,9 @@ td.visible-print {
 .tumblr-posts p {
   margin: 0 0 24.200000000000003px;
 }
+.input-group-addon > .glyphicon glyphicon-search {
+  top: 3px;
+}
 .wrapper {
   margin-right: auto;
   margin-left: auto;
