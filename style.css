@@ -6236,11 +6236,10 @@ td.visible-print {
   list-style: none;
   -webkit-padding-start: 0;
 }
-.tumblr-posts {
-  margin: auto 8% auto 8%;
-  max-width: 768px;
+.post-paragraphs {
+  max-width: 700px;
 }
-.tumblr-posts p {
+.post-paragraphs p {
   margin: 0 0 24.200000000000003px;
 }
 .wrapper {
@@ -6289,8 +6288,7 @@ td.visible-print {
   }
 }
 .posts {
-  margin: auto 8% auto 8%;
-  max-width: 768px;
+  max-width: 700px;
 }
 .posts p {
   margin: 0 0 24.200000000000003px;

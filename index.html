@@ -1,10 +1,11 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>{Title}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{Favicon}">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
-    <link rel="stylesheet" href="theme.css" />
+    <link rel="stylesheet" href="http://ec2-54-201-143-141.us-west-2.compute.amazonaws.com:8080/theme.css" />
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="{Favicon}">
@@ -26,26 +27,26 @@
 					<a class="navbar-brand" href="{BlogURL}">{Title}</a>
 				</div>
 				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						</li>
-					</ul>
 					<ul class="nav navbar-nav navbar-right">
 						<!-- Example of about page link <li><a href="/About">About</a></li>-->
-						{block:AskEnabled}<li><a href="./ask">{AskLabel}</a></li>{/block:AskEnabled}
-						{block:Twitter}<li><a href="http://twitter.com/{TwitterUsername}">@{TwitterUsername}</a></li>{/block:Twitter}
-						<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Find<b class="caret"></b></a>
-							<ul class="dropdown-menu">
-								<!--  This search needs margin/padding to be styled -->
-								{block:IndexPage}<li>
-									<div class="input-group">
-										<form role="form">
-											<input class="form-control" placeholder="Search&#8197;&#8230;" type="Search" name="q" value="{SearchQuery}"/>
-										</form>
-									</div>
-								</li>
-								{/block:IndexPage}
-								<li><a href="/archive">Browse archive</a></li>
-							</ul>
+						{block:AskEnabled}
+						<li><a href="./ask">{AskLabel}</a></li>
+						{/block:AskEnabled}
+						{block:Twitter}
+						<li><a href="http://twitter.com/{TwitterUsername}">@{TwitterUsername}</a></li>
+						{/block:Twitter}
+						<li class="dropdown">
+  						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Find&#8197;<b class="caret"></b></a>
+  						<ul class="dropdown-menu">
+    						<li>
+      					  <form class="navbar-form navbar-left" role="search" action="/search" method="get">
+                    <div class="input-group input-group-sm">
+                      <input type="search" class="form-control" placeholder="Search&#8197;&#8230;" name="q" value="{SearchQuery}">
+                    </div>
+                  </form>
+    						</li>
+  							<li><a href="/archive">Browse archive</a></li>
+  						</ul>
 						</li>
 					</ul>
 				</div><!--/.nav-collapse -->
@@ -60,7 +61,7 @@
 					{block:Posts}{block:Text}
 					<li class="post-text">
 						{block:Title}
-						<h2><a href="{Permalink}">{Title}</a></h2>
+						<h2><a href="{}">{Title}</a></h2>
 						{/block:Title}
 						<p>{Body}</p>
 					</li>
@@ -105,7 +106,7 @@
 					{/block:Link}{block:Chat}
 					<li class="post-chat">
 						{block:Title}
-						<h3><a href="{Permalink}">{Title}</a></h3>
+						<h3><a href="{}">{Title}</a></h3>
 						{/block:Title}
 
 						<ul class="chat">
@@ -133,7 +134,7 @@
 								{/block:Audio}{/block:Posts}
 							</ul>
       </div>
-			<div id="footer">
+			<div class="footer">
 				{block:Pagination}
 				<p>
 					<ul class="pager">

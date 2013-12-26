@@ -18,13 +18,11 @@
 	
 // increase after-paragraph margin
 // this one is questionable: should I just copy the bootstrap/type.less file and modify that
-.post-paragraphs {
+.tumblr-posts {
+// alter paragraph line height
 	p {
 		margin: 0 0 (@line-height-computed * 1.1);
 	}
+  margin: auto 8% auto 8%; // this sucks, there must be a cleaner way to mess with this, maybe the whole container
+  max-width: @screen-sm; // this is a hack that sucks and leaves the body stuck to the left on large monitors
 }
-
-// set container size
-//.theme-container {
-//	max-width: 730px;
-//}

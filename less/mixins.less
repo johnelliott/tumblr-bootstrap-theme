@@ -5,19 +5,21 @@
 	.container;
 }
 
-// add lozenges to links in specific areas of the site
-.posts { 
-	
-	// increase after-paragraph spacing
-	.post-paragraphs;
 
+.posts { 
+
+	
+	// posts div mods
+	.tumblr-posts;
+	
+  // add lozenges to post text, captions, source descriptions
 	.post-text p, .caption, .source {
 		.lozenges;
 	}
 	
 	// remove bullets from main posts list
 	ul {
-		.tumblr-posts-list;
+		.tumblr-posts-list; // make this go into the tumblr-posts heirarchy: DRY
 		}
 
 		// make images in image posts responsive    
