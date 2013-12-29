@@ -13,6 +13,10 @@
     {block:Description}
     <meta name="description" content="{MetaDescription}" />
     {/block:Description}
+    
+        <!-- theme default appearance options -->
+    <meta name="if:Show Find Dropdown" content="1"/>
+        
   </head>
   <body>
     <div class="wrapper">
@@ -35,13 +39,14 @@
 						{block:Twitter}
 						<li><a href="http://twitter.com/{TwitterUsername}">@{TwitterUsername}</a></li>
 						{/block:Twitter}
+            {block:IfShowFindDropdown}
 						<li class="dropdown">
   						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Find&#8197;<b class="caret"></b></a>
   						<ul class="dropdown-menu">
     						<li>
       					  <form class="navbar-form navbar-left" role="search" action="/search" method="get">
                     <div class="input-group input-group-sm">
-<!--                       <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span> -->
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
                       <input type="search" class="form-control" placeholder="Search&#8197;&#8230;" name="q" value="{SearchQuery}">
                     </div>
                   </form>
@@ -49,6 +54,7 @@
   							<li><a href="/archive">Browse archive</a></li>
   						</ul>
 						</li>
+            {/block:IfShowFindDropdown}
 					</ul>
 				</div><!--/.nav-collapse -->
 			</div><!--/.navbar navbar-default -->  
@@ -68,10 +74,10 @@
 					</li>
 					{/block:Text}{block:Photo}
 					<li class="post-photo">
-						<img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+						<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>
 
 						{block:Caption}
-						<div class="caption">{Caption}</div>
+						<p class="caption">{Caption}</p>
 						{/block:Caption}
 					</li>
 					{/block:Photo}{block:Panorama}
@@ -79,13 +85,13 @@
 						{LinkOpenTag}
 						<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
 						{LinkCloseTag}{block:Caption}
-						<div class="caption">{Caption}</div>
+						<p class="caption">{Caption}</p>
 						{/block:Caption}
 					</li>
 					{/block:Panorama}{block:Photoset}
 					<li class="post-photoset">
-						{Photoset-500}{block:Caption}
-						<div class="caption">{Caption}</div>
+						{Photoset-700}{block:Caption}
+						<p class="caption">{Caption}</p>
 						{/block:Caption}
 					</li>
 					{/block:Photoset}{block:Quote}
@@ -122,14 +128,14 @@
 								</li>
 								{/block:Chat}{block:Video}
 								<li class="post-video">
-									{Video-500}{block:Caption}
-									<div class="caption">{Caption}</div>
+									{Video-700}{block:Caption}
+									<p class="caption">{Caption}</p>
 									{/block:Caption}
 								</li>
 								{/block:Video}{block:Audio}
 								<li class="post-audio">
 									{AudioPlayerBlack}{block:Caption}
-									<div class="caption">{Caption}</div>
+									<p class="caption">{Caption}</p>
 									{/block:Caption}
 								</li>
 								{/block:Audio}{/block:Posts}

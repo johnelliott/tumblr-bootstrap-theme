@@ -14,7 +14,6 @@
 .tumblr-posts-list {
 	list-style: none;
 	-webkit-padding-start: 0;
-	}
 	
 // increase after-paragraph margin
 // this one is questionable: should I just copy the bootstrap/type.less file and modify that
@@ -24,7 +23,7 @@
 		margin: 0 0 (@line-height-computed * 1.1);
 	}
   margin: auto 8% auto 8%; // this sucks, there must be a cleaner way to mess with this, maybe the whole container
-  max-width: @screen-sm; // this is a hack that sucks and leaves the body stuck to the left on large monitors
+  /* max-width: @screen-sm;  */// this is a hack that sucks and leaves the body stuck to the left on large monitors
 }
 
 /*
@@ -34,3 +33,24 @@ don't want this silly glyph anyway
 top:3px;
 }
 */
+
+
+// need to make the whole navigation section of the HTML file not specific to TWBS and link via mixins.less, but for now this will do
+
+.navbar-default { 
+  background-color: @navbar-default-bg;
+  border-color: @navbar-default-border;
+	font-family:@font-family-base;
+	}
+	
+.navbar-brand {
+float: left;
+padding: @navbar-padding-vertical @navbar-padding-horizontal;
+font-size: @font-size-base;
+line-height: @line-height-computed;
+
+&:hover,
+&:focus {
+  text-decoration: none;
+}
+}
