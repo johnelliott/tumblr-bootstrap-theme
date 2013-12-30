@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{Favicon}">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
-    <link rel="stylesheet" href="http://static.tumblr.com/unurmss/cCnmykzk7/theme.css" />
+    <link rel="stylesheet" href="http://ec2-54-201-143-141.us-west-2.compute.amazonaws.com:8080/theme.css" />
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     <link rel="shortcut icon" href="{Favicon}">
@@ -96,7 +96,9 @@
 					</li>
 					{/block:Photoset}{block:Quote}
 					<li class="post-quote">
+					<p>
 						"{Quote}"
+					</p>
 
 						{block:Source}
 						<div class="source">{Source}</div>
@@ -126,33 +128,31 @@
 										{/block:Lines}
 									</ul>
 								</li>
-								{/block:Chat}{block:Video}
-								<li class="post-video">
-									{Video-700}{block:Caption}
-									<p class="caption">{Caption}</p>
-									{/block:Caption}
-								</li>
-								{/block:Video}{block:Audio}
-								<li class="post-audio">
-									{AudioPlayerBlack}{block:Caption}
-									<p class="caption">{Caption}</p>
-									{/block:Caption}
-								</li>
-								{/block:Audio}{/block:Posts}
-							</ul>
+						{/block:Chat}{block:Video}
+						<li class="post-video">
+							{Video-700}{block:Caption}
+							<p class="caption">{Caption}</p>
+							{/block:Caption}
+						</li>
+						{/block:Video}{block:Audio}
+						<li class="post-audio">
+							{AudioPlayerBlack}{block:Caption}
+							<p class="caption">{Caption}</p>
+							{/block:Caption}
+						</li>
+						{/block:Audio}{/block:Posts}
+					</ul>
       </div>
 			<div class="footer">
 				{block:Pagination}
-				<p>
 					<ul class="pager">
 						{block:PreviousPage}
-						<li><a href="{PreviousPage}">Newer</a></li>
+						<li><a href="{PreviousPage}"><span class="glyphicon glyphicon-arrow-left"></span>&#x2002;Newer</a></li>
 						{/block:PreviousPage}
 						{block:NextPage}
-						<li><a href="{NextPage}">Older</a></li>
+						<li><a href="{NextPage}">Older&#x2002;<span class="glyphicon glyphicon-arrow-right"></span></a></li>
 						{/block:NextPage}
 					</ul>
-				</p>
 				{/block:Pagination}
 			</div>
     </div>

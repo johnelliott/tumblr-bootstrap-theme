@@ -353,13 +353,13 @@
 // Pagination
 // -------------------------
 
-@pagination-bg:                        #fff;
-@pagination-border:                    #ddd;
+@pagination-bg:                        @body-bg; // was #fff;
+@pagination-border:                    transparent; // was #ddd;
 
-@pagination-hover-bg:                  @gray-lighter;
+@pagination-hover-bg:                  @body-bg;
 
-@pagination-active-bg:                 @brand-primary;
-@pagination-active-color:              #fff;
+@pagination-active-bg:                 @gray-darker;
+@pagination-active-color:              @gray-lighter;
 
 @pagination-disabled-color:            @gray-light;
 
@@ -369,7 +369,7 @@
 
 @pager-bg:                             @pagination-bg;
 @pager-border:                         @pagination-border;
-@pager-border-radius:                  15px;
+@pager-border-radius:                  @border-radius-base; // was 15px default
 
 @pager-hover-bg:                       @pagination-hover-bg;
 
