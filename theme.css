@@ -6238,13 +6238,21 @@ td.visible-print {
 .tumblr-posts-list {
   list-style: none;
   -webkit-padding-start: 0;
+  /*
+	li {
+	  margin-top: @line-height-computed * 3;
+	}
+*/
+}
+.tumblr-posts-list .pageperm {
+  margin-bottom: 81px;
 }
 .tumblr-posts {
   margin: auto 8% auto 8%;
   /* max-width: @screen-sm;  */
 }
 .tumblr-posts p {
-  margin: 0 0 29.700000000000003px;
+  margin: 0 0 21.6px;
 }
 .tumblr-posts .post-text p,
 .tumblr-posts .post-quote p,
@@ -6361,7 +6369,7 @@ top:3px;
   /* max-width: @screen-sm;  */
 }
 .posts p {
-  margin: 0 0 29.700000000000003px;
+  margin: 0 0 21.6px;
 }
 .posts .post-text p,
 .posts .post-quote p,
@@ -6379,6 +6387,14 @@ top:3px;
 .posts ul {
   list-style: none;
   -webkit-padding-start: 0;
+  /*
+	li {
+	  margin-top: @line-height-computed * 3;
+	}
+*/
+}
+.posts ul .pageperm {
+  margin-bottom: 81px;
 }
 .posts .post-photo img {
   display: block;

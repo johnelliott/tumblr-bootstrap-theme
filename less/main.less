@@ -14,7 +14,21 @@
 .tumblr-posts-list {
 	list-style: none;
 	-webkit-padding-start: 0; // see if there is an unstyled list class in TWBS
+	
+/*
+	li {
+	  margin-top: @line-height-computed * 3;
 	}
+*/
+
+  .pageperm {
+    margin-bottom: @line-height-computed * 3;
+    
+  }
+
+}
+
+
 	
 // increase after-paragraph margin
 // this one is questionable: should I just copy the bootstrap/type.less file and modify that
@@ -25,7 +39,7 @@
 
 // alter paragraph line height
 	p {
-		margin: 0 0 (@line-height-computed * 1.1);
+		margin: 0 0 (@line-height-computed * 0.8);
 		}
 	
 // make texts posts not too wide
