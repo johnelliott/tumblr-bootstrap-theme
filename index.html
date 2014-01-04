@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{Favicon}">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
-    <link rel="stylesheet" href="http://static.tumblr.com/unurmss/vpNmynlgt/theme.css" />
+    <link rel="stylesheet" href="http://ec2-54-201-143-141.us-west-2.compute.amazonaws.com:8080/theme.css" />
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
 	<!-- Header general -->
@@ -62,104 +62,100 @@
 			</div><!--/.navbar navbar-default -->  
 				{block:SearchPage}
 				<p class="search-results">
-					<a href="/search/{URLSafeSearchQuery}">Search for {SearchQuery}</a> returned {SearchResultCount} results
+					<a href="/search/{URLSafeSearchQuery}">Search for <a href="/search/{URLSafeSearchQuery}">{SearchQuery}</a> returned {SearchResultCount} results
 				</p>
 				{/block:SearchPage}
       <div class="posts">
 				<ul>
-					{block:Posts}{block:Text}
-					<li class="post-text">
-						{block:Title}
-						<h2><a href="{}">{Title}</a></h2>
-						{/block:Title}
-						<p>{Body}</p>
-					</li>
-					{/block:Text}{block:Photo}
-					<li class="post-photo">
-						<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>
-
-						{block:Caption}
-						<p class="caption">{Caption}</p>
-						{/block:Caption}
-					</li>
-					{/block:Photo}{block:Panorama}
-					<li class="post-panorama">
-						{LinkOpenTag}
-						<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
-						{LinkCloseTag}{block:Caption}
-						<p class="caption">{Caption}</p>
-						{/block:Caption}
-					</li>
-					{/block:Panorama}{block:Photoset}
-					<li class="post-photoset">
-						{Photoset-700}{block:Caption}
-						<p class="caption">{Caption}</p>
-						{/block:Caption}
-					</li>
-					{/block:Photoset}{block:Quote}
-					<li class="post-quote">
-					<p>
-						"{Quote}"
-					</p>
-
-						{block:Source}
-						<div class="source">{Source}</div>
-						{/block:Source}
-					</li>
-					{/block:Quote}{block:Link}
-					<li class="post-link">
-						<a href="{URL}" class="link" {Target}>{Name}</a>
-
-						{block:Description}
-						<div class="description">{Description}</div>
-						{/block:Description}
-					</li>
-					{/block:Link}{block:Chat}
-					<li class="post-chat">
-						{block:Title}
-						<h3><a href="{}">{Title}</a></h3>
-						{/block:Title}
-
-						<ul class="chat">
-							{block:Lines}
-							<li class="{Alt} user_{UserNumber}">
-						{block:Label}
-						<span class="label">{Label}</span>
-						{/block:Label}{Line}
-										</li>
-										{/block:Lines}
-									</ul>
-								</li>
-						{/block:Chat}{block:Video}
-						<li class="post-video">
-							{Video-700}{block:Caption}
-							<p class="caption">{Caption}</p>
-							{/block:Caption}
-						</li>
-						{/block:Video}{block:Audio}
-						<li class="post-audio">
-							{AudioPlayerBlack}{block:Caption}
-							<p class="caption">{Caption}</p>
-							{/block:Caption}
-						</li>
-						{/block:Audio}
+					{block:Posts}
+					
+  					{block:Text}
+  					<li class="post-text">
+  						{block:Title}
+  						<h2><a href="{}">{Title}</a></h2>
+  						{/block:Title}
+  						<p>{Body}</p>
+  					</li>
+  					{/block:Text}
+  					
+  					{block:Photo}
+  					<li class="post-photo">
+  						{LinkOpenTag}<img src="{PhotoURL-1280}" alt="{PhotoAlt}"/>{LinkCloseTag}
+  						{block:Caption}<p class="caption">{Caption}</p>{/block:Caption}
+  					</li>
+  					{/block:Photo}
+  					
+  					{block:Panorama}
+  					<li class="post-panorama">
+  						{LinkOpenTag}<img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>{LinkCloseTag}
+  						{block:Caption}<p class="caption">{Caption}</p>{/block:Caption}
+  					</li>
+  					{/block:Panorama}
+  					
+  					{block:Photoset}
+  					<li class="post-photoset">
+  						{Photoset-700}
+  						{block:Caption}<p class="caption">{Caption}</p>{/block:Caption}
+  					</li>
+  					{/block:Photoset}
+  					
+  					{block:Quote}
+  					<li class="post-quote">
+    					<p>"{Quote}"</p>
+  						{block:Source}<dpiv class="source">{Source}</p>{/block:Source}
+  					</li>
+  					{/block:Quote}
+  					
+  					{block:Link}
+  					<li class="post-link">
+  						<p><a href="{URL}" class="link" {Target}>{Name}</a></p>
+  						{block:Description}<div class="description">{Description}</div>{/block:Description}
+  					</li>
+  					{/block:Link}
+  					
+  					{block:Chat}
+  					<li class="post-chat">
+  						{block:Title}<h3><a href="{}">{Title}</a></h3>{/block:Title}
+  						<ul class="chat">
+  							{block:Lines}
+  							 <li class="{Alt} user_{UserNumber}">
+      						{block:Label}<span class="label">{Label}</span>{/block:Label}  						
+      						{Line}</li>{/block:Lines}
+  									</ul>
+  							</li>
+  						{/block:Chat}
+  						
+  						{block:Video}
+  						<li class="post-video">
+  							{Video-700}{block:Caption}
+  							<p class="caption">{Caption}</p>
+  							{/block:Caption}
+  						</li>
+  						{/block:Video}
+  						
+  						{block:Audio}
+  						<li class="post-audio">
+  							{AudioPlayerBlack}{block:Caption}
+  							<p class="caption">{Caption}</p>
+  							{/block:Caption}
+  						</li>
+  						{/block:Audio}
+  						
 <!-- Index page -->	
-        		{block:IndexPage}
-        			<p class="pageperm">
-        				<span><a href="{Permalink}">&#8734; {MonthNumber}/{DayOfMonth}</a></span>
-        			</p>
-        		{/block:IndexPage}	
+          		{block:IndexPage}
+          			<li class="pageperm">
+          				<span><a href="{Permalink}">{MonthNumber}/{DayOfMonth}</a></span>
+          			</li>
+          		{/block:IndexPage}	
 <!-- Permalink Page additions -->	
-      			{block:PermalinkPage}
-      				<div id="permalinkblock">	
-      					<p><a href="{Permalink}">&#8734; link to this page</a>{block:HasTags} {block:Tags}<a href="{TagURL}">{Tag} </a>{/block:Tags}{/block:HasTags}</p>
-      					{block:PostNotes}
-      						<p>notes:{PostNotes}</p>
-      					{/block:PostNotes}
-      				</div> 
-      			{/block:PermalinkPage}
-						
-						
+        			{block:PermalinkPage}
+        				<li class="permalinkblock">	
+        					<p><a href="{Permalink}">Link to this page</a>{block:HasTags} {block:Tags}<a href="{TagURL}">{Tag} </a>{/block:Tags}{/block:HasTags}</p>
+        					{block:PostNotes}
+        						<p>notes:{PostNotes}</p>
+        					{/block:PostNotes}
+        				</li> 
+        			{/block:PermalinkPage}
 						{/block:Posts}
 					</ul>
       </div>

@@ -1,69 +1,6 @@
 // Code for specific non-framework features
 
-// add lozenges before links
-.lozenges {
-    a:before {
-        content: "\25CA\2005";
-        color: blue;
-        font-weight: normal;
-        font-weight: bold;
-    }
-}
-
-// remove bullets from list
-.tumblr-posts-list {
-	list-style: none;
-	-webkit-padding-start: 0; // see if there is an unstyled list class in TWBS
-	
-/*
-	li {
-	  margin-top: @line-height-computed * 3;
-	}
-*/
-
-  .pageperm {
-    margin-bottom: @line-height-computed * 3;
-    
-  }
-
-}
-
-
-	
-// increase after-paragraph margin
-// this one is questionable: should I just copy the bootstrap/type.less file and modify that
-.tumblr-posts {
-  margin: auto 8% auto 8%; // this sucks, there must be a cleaner way to mess with this, maybe the whole container
-  /* max-width: @screen-sm;  */// this is a hack that sucks and leaves the body stuck to the left on large monitors
-
-
-// alter paragraph line height
-	p {
-		margin: 0 0 (@line-height-computed * 0.8);
-		}
-	
-// make texts posts not too wide
-	.post-text,
-	.post-quote,
-	.post-link {
-    p {
-  	  max-width: @screen-sm;
-	  }
-	}
-}
-
-
-/*
-don't want this silly glyph anyway
-
-.input-group-addon .glyphicon glyphicon-search {
-top:3px;
-}
-*/
-
-
 // need to make the whole navigation section of the HTML file not specific to TWBS and link via mixins.less, but for now this will do
-
 .navbar-default { 
   background-color: @navbar-default-bg;
   border-color: @navbar-default-border;
@@ -82,10 +19,38 @@ top:3px;
   }
 }
 
+// add lozenges before links
+.lozenges {
+    a:before {
+        content: "\25CA\2005";
+        color: blue;
+        font-weight: normal;
+        font-weight: bold;
+    }
+}
+
+// remove bullets from list
+.tumblr-posts-list {
+	list-style: none;
+	-webkit-padding-start: 0; // see if there is an unstyled list class in TWBS
+
+  .pageperm {
+    margin-bottom: @line-height-computed * 3;
+  }
+}
+
+
+// increase after-paragraph margin
+// this one is questionable: should I just copy the bootstrap/type.less file and modify that
+.tumblr-posts {
+
+// alter paragraph line height
+	p {
+		margin: 0 0 (@line-height-computed * 0.8);
+		}
+		
+}
+
 .footer {
   .pager;
-  ul{
-      //corner radius to zero why isn't this working??
-    // border-radius: @border-radius-base;
-    }
 }
