@@ -12,7 +12,7 @@
 	.tumblr-posts;
 	
   // add lozenges to post text, captions, source descriptions
-	.post-text p, .caption p, .source, .pageperm, .permalinkblock {
+	.post-text p, .caption, .source, .post-quote, .post-link p, .post-link {
 		.lozenges;
 	}
 	
@@ -22,7 +22,7 @@
 		}
 
 		// make images in image posts responsive    
-		.post-photo img {
+		.post-photo img, .post-photoset photoset {
 			.img-responsive;
 		}
 }
@@ -36,3 +36,7 @@
 	 }
 }
 
+// footer
+.footer {
+  .pager;
+}
