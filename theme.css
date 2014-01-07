@@ -5551,6 +5551,8 @@ button.close {
 .navbar-collapse:after,
 .wrapper:before,
 .wrapper:after,
+.wrapper .blog:before,
+.wrapper .blog:after,
 .footer:before,
 .footer:after {
   content: " ";
@@ -5574,6 +5576,7 @@ button.close {
 .navbar-header:after,
 .navbar-collapse:after,
 .wrapper:after,
+.wrapper .blog:after,
 .footer:after {
   clear: both;
 }
@@ -6245,6 +6248,37 @@ td.visible-print {
 .navbar-brand:focus {
   text-decoration: none;
 }
+.sidenav {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*
+	.navlist{
+  	.title {
+    	text-transoform: uppercase;
+  	}
+	}
+*/
+}
+@media (min-width: 992px) {
+  .sidenav {
+    float: left;
+    width: 16.666666666666664%;
+  }
+}
+.content {
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media (min-width: 992px) {
+  .content {
+    float: left;
+    width: 66.66666666666666%;
+  }
+}
 .lozenges a:before {
   content: "\25CA\2005";
   color: blue;
@@ -6305,6 +6339,14 @@ td.visible-print {
     margin-right: 0;
     margin-left: 0;
   }
+}
+.wrapper .blog {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+.wrapper .blog .sidenav .navlist {
+  padding-left: 0;
+  list-style: none;
 }
 .posts .text-post p {
   margin: 0 0 19.200000000000003px;
