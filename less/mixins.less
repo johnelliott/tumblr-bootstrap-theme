@@ -4,10 +4,13 @@
 .wrapper { 
 	.container;
 	.blog {
-  	.row;
+  	.row; // should this be something else? is it TWBS-spectific?
   	.sidenav{
   	  .navlist{
     	  .list-unstyled;
+    	  .li {
+      	  margin: 10px 0px 10px 0px
+    	  }
   	  }
   	}
 	}
@@ -18,7 +21,7 @@
 	
 	// posts div mods
 	.tumblr-posts;
-	
+  	
   // add lozenges to post text, captions, source descriptions
 	.post-text p, .caption, .source, .post-quote, .post-link p, .post-link {
 		.lozenges;

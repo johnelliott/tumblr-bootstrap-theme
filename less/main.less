@@ -20,19 +20,23 @@
   }
 }
 
+.blog {
+	margin-top: @padding-large-vertical * 3;
+}
 .sidenav {
-	.make-md-column(2);
-/*
+	.make-md-column(3);
 	.navlist{
-  	.title {
-    	text-transoform: uppercase;
-  	}
+    .title {
+      text-transform: uppercase;
+	  }
+	  li {
+  	  margin: @padding-large-vertical 0px @padding-large-vertical 0px;
+	  }
 	}
-*/
 }
 
 .content {
-	.make-md-column(8);
+	.make-md-column(7);
 }
 
 
@@ -51,7 +55,7 @@
 // increase after-paragraph margin
 // this one is questionable: should I just copy the bootstrap/type.less file and modify that
 .tumblr-posts {
-
+  margin-top: 1em;
   // alter paragraph line height
 	.text-post p {
 		margin: 0 0 (@line-height-computed * 0.8);

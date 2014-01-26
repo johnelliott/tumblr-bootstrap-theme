@@ -18,6 +18,8 @@
     
         <!-- theme default appearance options -->
     <meta name="if:Show Find Dropdown" content="1"/>
+    <meta name="text:Google Analytics Number" content=""/>
+
         
   </head>
   <body>
@@ -25,7 +27,7 @@
       <div class="blog">
         <div class="sidenav">
           <ul class="navlist">
-            <li class="title"><h1><a href="{BlogURL}">{Title}</a></h1></li>
+            <li class="title"><a href="{BlogURL}">{Title}</a></li>
             {block:AskEnabled}<li><a href="./ask">{AskLabel}</a></li>{/block:AskEnabled}
 						{block:Twitter}<li><a href="http://twitter.com/{TwitterUsername}">@{TwitterUsername}</a></li>{/block:Twitter}
           </ul>
@@ -148,5 +150,18 @@
     </div>
       </div>
     </div>
+    <script>
+/*     Google Analytics Code */
+{block:IfGoogleAnalyticsNumber}
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', '{text:Google Analytics Number}', 'tumblr.com');
+  ga('send', 'pageview');
+
+</script>
+{/block:IfGoogleAnalyticsNumber}
   </body>
 </html>
