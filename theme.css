@@ -6252,6 +6252,8 @@ td.visible-print {
   margin-top: 30px;
 }
 .sidenav {
+  float: left;
+  width: 100%;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -6260,7 +6262,7 @@ td.visible-print {
 @media (min-width: 992px) {
   .sidenav {
     float: left;
-    width: 25%;
+    width: 16.666666666666664%;
   }
 }
 .sidenav .navlist .title {
@@ -6270,6 +6272,8 @@ td.visible-print {
   margin: 10px 0px 10px 0px;
 }
 .content {
+  float: left;
+  width: 100%;
   position: relative;
   min-height: 1px;
   padding-left: 15px;
@@ -6278,7 +6282,7 @@ td.visible-print {
 @media (min-width: 992px) {
   .content {
     float: left;
-    width: 58.333333333333336%;
+    width: 83.33333333333334%;
   }
 }
 .lozenges a:before {
@@ -6358,9 +6362,6 @@ td.visible-print {
 }
 .posts {
   margin-top: 1em;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 .posts .text-post p {
   margin: 0 0 20px;
