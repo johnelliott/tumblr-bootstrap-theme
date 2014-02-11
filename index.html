@@ -6,42 +6,31 @@
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
     <link rel="stylesheet" href="http://ec2-54-201-143-141.us-west-2.compute.amazonaws.com:8080/theme.css" />
   <!-- Scripts -->
-    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
     
     <!-- Begin infinite scroll attempt -->
     
-
+    <script src="http://static.tumblr.com/unurmss/du4n0tbvo/jquery.infinitescroll.min.js"></script>
     
-    <script src="http://static.tumblr.com/twte3d7/H8Glm663z/masonry.js"></script>
-
-    <script type="text/javascript">
-    $(window).load(function () {
-    $('#content').masonry({
-    itemSelector : ".article",
-    },
-    function() { $('.content').masonry({ appendedContent: $(this) }); }
-    );
-    });
+    <script type="text/javascript" charset="utf-8">
+      // infinitescroll() is called on the element that surrounds 
+      // the items you will be loading more of
+      console.log('hi')
+      $('div.content').infinitescroll({
+      
+        navSelector  : "ul.pager",            
+                       // selector for the paged navigation (it will be hidden)
+        nextSelector : "li a.NextPage"/*
+,    
+                       // selector for the NEXT link (to page 2)
+        itemSelector : "div.content div.posts"          
+*/
+                       // selector for all items you'll retrieve
+                      
+      });
+      console.log('goodbye')
     </script>
-    
-    <script src="http://static.tumblr.com/twte3d7/qNulm663d/infinite.js"></script>
-    
-    <script type="text/javascript">
-    $(window).load(function () {
-    $('.content').masonry(),
-    $('.masonryWrap').infinitescroll({ 
-    itemSelector : ".posts", 
-    navSelector : "div.pager",
-    nextSelector : "a.NextPage",
-    bufferPx : 10000,
-    extraScrollPx: 10000,
-    loadingImg : "",
-    loadingText : "",
-     },
-    function() { $('.blog').masonry({ appendedContent: $(this) }); 
-    });
-     });</script>
 
     
     <!-- End infinite scroll attempt -->
@@ -168,17 +157,7 @@
         						<p>notes:{PostNotes}</p>
         					{/block:PostNotes}
         				</div>
-<!-- Permalink navigation -->
-        				{block:PermalinkPagination} 
-        					<ul class="pager"> <!-- This may need to have its own class extension to make them different -->
-                    {block:NextPost}
-                        <li><a href="{NextPost}"><span class="glyphicon glyphicon-arrow-left"></span>&#x2002;Next Entry</a></li>
-                    {/block:NextPost}
-                    {block:PreviousPost}
-                        <li><a href="{PreviousPost}">Previous Entry&#x2002;<span class="glyphicon glyphicon-arrow-right"></span></a></li>
-                    {/block:PreviousPost} 
-        					</ul>
-                {/block:PermalinkPagination}
+
 
         			{/block:PermalinkPage}
 						{/block:Posts}
@@ -186,7 +165,7 @@
       </div>
       <!-- Footer -->
 			<div class="footer">
-<!-- 			Pagination -->
+<!-- Pagination -->
 				{block:Pagination}
 					<ul class="pager">
 						{block:PreviousPage}
@@ -201,11 +180,22 @@
               {/block:JumpPage}
               {/block:JumpPagination}</li>
 						{block:NextPage}
-						<li><a href="{NextPage}" class="NextPage" >Next&#x2002;<span class="glyphicon glyphicon-arrow-right"></span></a></li>
+						<li><a href="{NextPage}" class="NextPage">Next&#x2002;<span class="glyphicon glyphicon-arrow-right"></span></a></li>
 						{/block:NextPage}
 					</ul>
 				{/block:Pagination}
 
+<!-- Permalink navigation -->
+				{block:PermalinkPagination} 
+					<ul class="pager"> <!-- This may need to have its own class extension to make them different -->
+            {block:NextPost}
+                <li><a href="{NextPost}"><span class="glyphicon glyphicon-arrow-left"></span>&#x2002;Next Entry</a></li>
+            {/block:NextPost}
+            {block:PreviousPost}
+                <li><a href="{PreviousPost}">Previous Entry&#x2002;<span class="glyphicon glyphicon-arrow-right"></span></a></li>
+            {/block:PreviousPost} 
+					</ul>
+        {/block:PermalinkPagination}
   			
 			</div>
     </div>
