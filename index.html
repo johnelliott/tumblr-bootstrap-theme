@@ -16,18 +16,19 @@
     <script type="text/javascript" charset="utf-8">
       // infinitescroll() is called on the element that surrounds 
       // the items you will be loading more of
-      console.log('hi')
-      $('div.content').infinitescroll({
       
-        navSelector  : "ul.pager",            
-                       // selector for the paged navigation (it will be hidden)
-        nextSelector : "li a.NextPage"/*
-,    
-                       // selector for the NEXT link (to page 2)
-        itemSelector : "div.content div.posts"          
-*/
-                       // selector for all items you'll retrieve
-                      
+      console.log('hi')
+      $(window).load(function () {
+        $('div.content').infinitescroll({
+          // selector for the paged navigation (it will be hidden)
+          navSelector  : "ul.pager",
+                    
+          // selector for the NEXT link (to page 2)         
+          nextSelector : "li a.NextPage",
+          
+          // selector for all items you'll retrieve              
+          itemSelector : "div.content div.posts"     
+        })
       });
       console.log('goodbye')
     </script>
@@ -215,6 +216,6 @@
         ga('create', '{text:Google Analytics UA}', 'tumblr.com');
         ga('send', 'pageview');
     </script>
-{/block:IfGoogleAnalyticsUA}
+    {/block:IfGoogleAnalyticsUA}
   </body>
 </html>
