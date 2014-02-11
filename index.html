@@ -5,8 +5,48 @@
     <link rel="shortcut icon" href="{Favicon}">
     <link rel="alternate" type="application/rss+xml" href="{RSS}">
     <link rel="stylesheet" href="http://ec2-54-201-143-141.us-west-2.compute.amazonaws.com:8080/theme.css" />
+  <!-- Scripts -->
     <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    
+    <!-- Begin infinite scroll attempt -->
+    
+
+    
+    <script src="http://static.tumblr.com/twte3d7/H8Glm663z/masonry.js"></script>
+
+    <script type="text/javascript">
+    $(window).load(function () {
+    $('#content').masonry({
+    itemSelector : ".article",
+    },
+    function() { $('.content').masonry({ appendedContent: $(this) }); }
+    );
+    });
+    </script>
+    
+    <script src="http://static.tumblr.com/twte3d7/qNulm663d/infinite.js"></script>
+    
+    <script type="text/javascript">
+    $(window).load(function () {
+    $('.content').masonry(),
+    $('.masonryWrap').infinitescroll({ 
+    itemSelector : ".posts", 
+    navSelector : "div.pager",
+    nextSelector : "a.NextPage",
+    bufferPx : 10000,
+    extraScrollPx: 10000,
+    loadingImg : "",
+    loadingText : "",
+     },
+    function() { $('.blog').masonry({ appendedContent: $(this) }); 
+    });
+     });</script>
+
+    
+    <!-- End infinite scroll attempt -->
+    
+    
 	<!-- Header general -->
     <title>{Title}{block:PostSummary}—{PostSummary}{/block:PostSummary}{block:SearchPage}—{lang:Search results for SearchQuery}{/block:SearchPage}</title>
     <link rel="shortcut icon" href="{Favicon}">
@@ -17,7 +57,7 @@
   	<link rel="apple-touch-icon" href="{PortraitURL-96}"/>
     
         <!-- theme default appearance options -->
-    <meta name="if:Show Find Dropdown" content="1"/>
+<!--     <meta name="if:Show Find Dropdown" content="1"/> -->
     <meta name="text:Google Analytics Number" content=""/>
          
   </head>
@@ -28,7 +68,6 @@
           <ul class="navlist">
             <li class="title"><a href="{BlogURL}">{Title}</a></li>
             {block:AskEnabled}<li><a href="./ask">{AskLabel}</a></li>{/block:AskEnabled}
-						{block:Twitter}<li><a href="http://twitter.com/{TwitterUsername}">@{TwitterUsername}</a></li>{/block:Twitter}
           </ul>
         </div>
         <div class="content">
@@ -129,15 +168,15 @@
         						<p>notes:{PostNotes}</p>
         					{/block:PostNotes}
         				</div>
-<!--                 permalink navigation -->
+<!-- Permalink navigation -->
         				{block:PermalinkPagination} 
         					<ul class="pager"> <!-- This may need to have its own class extension to make them different -->
-                    {block:PreviousPost}
-                        <li><a href="{PreviousPost}"><span class="glyphicon glyphicon-arrow-left"></span>&#x2002;Newer Post</a></li>
-                    {/block:PreviousPost}
                     {block:NextPost}
-                        <li><a href="{NextPost}">Older Post&#x2002;<span class="glyphicon glyphicon-arrow-right"></span></a></li>
-                    {/block:NextPost} 
+                        <li><a href="{NextPost}"><span class="glyphicon glyphicon-arrow-left"></span>&#x2002;Next Entry</a></li>
+                    {/block:NextPost}
+                    {block:PreviousPost}
+                        <li><a href="{PreviousPost}">Previous Entry&#x2002;<span class="glyphicon glyphicon-arrow-right"></span></a></li>
+                    {/block:PreviousPost} 
         					</ul>
                 {/block:PermalinkPagination}
 
@@ -151,7 +190,7 @@
 				{block:Pagination}
 					<ul class="pager">
 						{block:PreviousPage}
-						<li><a href="{PreviousPage}"><span class="glyphicon glyphicon-arrow-left"></span>&#x2002;Newer</a></li>
+						<li><a href="{PreviousPage}"><span class="glyphicon glyphicon-arrow-left"></span>&#x2002;Previous</a></li>
 						{/block:PreviousPage}
     				<li>{block:JumpPagination length="5"}
               {block:CurrentPage}
@@ -162,7 +201,7 @@
               {/block:JumpPage}
               {/block:JumpPagination}</li>
 						{block:NextPage}
-						<li><a href="{NextPage}">Older&#x2002;<span class="glyphicon glyphicon-arrow-right"></span></a></li>
+						<li><a href="{NextPage}" class="NextPage" >Next&#x2002;<span class="glyphicon glyphicon-arrow-right"></span></a></li>
 						{/block:NextPage}
 					</ul>
 				{/block:Pagination}
