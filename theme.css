@@ -6297,6 +6297,9 @@ td.visible-print {
 .tumblr-posts .text-post p {
   margin: 0 0 20px;
 }
+.tumblr-posts .post-image {
+  max-height: 100%;
+}
 .tumblr-posts-list {
   list-style: none;
   -webkit-padding-start: 0;
@@ -6365,6 +6368,9 @@ td.visible-print {
 }
 .posts .text-post p {
   margin: 0 0 20px;
+}
+.posts .post-image {
+  max-height: 100%;
 }
 .posts .post-text p a:before,
 .posts .caption a:before,
