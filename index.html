@@ -52,7 +52,7 @@
     {block:Description}
     <meta name="description" content="{MetaDescription}" />
     {/block:Description}
-  	<link rel="apple-touch-icon" href="{PortraitURL-96}"/>
+  	<link rel="apple-touch-icon" href="{PortraitURL-128}"/>
     
         <!-- theme default appearance options -->
 <!--     <meta name="if:Show Find Dropdown" content="1"/> -->
@@ -72,7 +72,7 @@
       <!-- Search -->
 			{block:SearchPage}
 			<div class="search-results">
-				<a href="/search/{URLSafeSearchQuery}">{SearchQuery}</a> returned {SearchResultCount} results
+				<a href="/search/{URLSafeSearchQuery}">{lang:Your search for SearchQuery returned SearchResultCount results}</a>
 			</div>
 			{/block:SearchPage}
 			
@@ -161,7 +161,7 @@
 <!-- Permalink Page -->	
         			{block:PermalinkPage}
         				<div class="permalinkblock">	
-        					<p><a href="{Permalink}">&#8734; Link to this page</a>{block:HasTags} {block:Tags}<a href="{TagURL}">{Tag} </a>{/block:Tags}{/block:HasTags}</p>
+        					<p><a href="{Permalink}">&#8734; Link to this page</a>{block:HasTags} {block:Tags}<a href="{TagURL}">{Tag} </a>{/block:Tags}{/block:HasTags}</p> <!-- Could add localization here -->
         					{block:PostNotes}
         						<p>notes:{PostNotes}</p>
         					{/block:PostNotes}
